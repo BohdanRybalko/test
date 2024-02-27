@@ -3,6 +3,7 @@ import { getUsers } from '../services/UserService';
 import UserCard from './UserCard';
 import './App.css';
 
+
 export const App = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);

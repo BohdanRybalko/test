@@ -1,39 +1,85 @@
 .user-card {
-  border: 1px solid #ddd;
-  padding: 16px;
-  margin: 16px;
-  text-align: center;
+  width: 380px;
+  height: 460px;
+  border-radius: 20px;
+  background-color: #471ca9;
+  margin-right: 48px;
+  margin-bottom: 40px;
+}
+.gap-carts {
+  gap: 48px;
 }
 
-.user-card img {
-  border-radius: 50%;
+.image_bag {
+  background-size: 308px 168px;
+  background-position-x: 36px;
+  background-position-y: 28px;
+  background-repeat: no-repeat;
+  background-image: url(../cart-image/picture2\ 1.png);
+}
+.div-logo {
+  width: 76px;
+  height: 22px;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-bottom: 136px;
+}
+.div_carts {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #ebd8ff;
+  margin-top: 26px;
+}
+.cart_img_div {
+  display: flex;
+  justify-content: center;
+}
+
+.cart_img {
   width: 80px;
   height: 80px;
-  object-fit: cover;
+  top: 178px;
+  left: 150px;
+  border-radius: 85.92px;
 }
 
-.user-card h3 {
+.div_carts h3 {
   margin: 8px 0;
 }
 
-.user-card p {
+.div_carts p {
   margin: 8px 0;
+}
+.gap-img {
+  gap: 26px;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  width: 196px;
+  height: 50px;
+  padding: 14px, 28px, 14px, 28px;
+  margin: 26px 92px 36px;
 }
 
 .follow-btn,
 .following-btn {
+  width: 196px;
+  height: 50px;
   padding: 8px 16px;
   cursor: pointer;
   font-weight: bold;
   border: none;
-  color: #fff;
+  color: black;
   border-radius: 4px;
 }
 
 .follow-btn {
-  background-color: blue;
+  background-color: #ebd8ff;
 }
 
 .following-btn {
-  background-color: green;
+  background-color: #5cd3a8;
 }

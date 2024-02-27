@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './UserCard.css';
+import logo from '../cart-image/Logo.png'
 
 const UserCard = ({ user }) => {
   const [isFollowing, setIsFollowing] = useState(false);
@@ -15,18 +16,33 @@ const UserCard = ({ user }) => {
   };
 
   return (
-    <div className="user-card">
-      <img src={user.avatar} alt="User Avatar" />
-      <h3>{user.username}</h3>
-      <p>Followers: {followersCount.toLocaleString()}</p>
-      <p>Tweets: {user.tweets}</p>
-      <button
+    <div className='gap-carts'>
+      <div className="user-card">
+      <div className='image_bag'>
+      <div className='div-logo'>
+        <img src={logo} alt="Logo" className="logo" />
+      </div>
+      
+      <div className="cart_img_div">
+        <img className='cart_img' src={user.avatars} alt="User Avatar" />
+        
+        </div>
+        </div>
+      <div className="div_carts">
+          <p>Tweets: {user.tweets}</p>
+          <p>Followers: {followersCount.toLocaleString()}</p>
+          </div>
+          
+      <div className='button'><button 
         onClick={handleFollowClick}
         className={isFollowing ? 'following-btn' : 'follow-btn'}
       >
         {isFollowing ? 'Following' : 'Follow'}
       </button>
-    </div>
+      </div>
+      
+      </div>
+      </div>
   );
 };
 

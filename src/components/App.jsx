@@ -1,16 +1,32 @@
+import React, { useState, useEffect } from 'react';
+import { getUsers } from '../services/UserService';
+import UserCard from './UserCard';
+
 export const App = () => {
+  const [users, setUsers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const data = await getUsers(currentPage);
+      setUsers(prevUsers => [...prevUsers, ...data]);
+    };
+
+    fetchUsers();
+  }, [currentPage]);
+
+  const handleLoadMore = () => {
+    setCurrentPage(prevPage => prevPage + 1);
+  };
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div className="app">
+      {users.map(user => (
+        <UserCard key={user.id} user={user} />
+      ))}
+      <button onClick={handleLoadMore}>Load More</button>
     </div>
   );
 };
+
+export default App;

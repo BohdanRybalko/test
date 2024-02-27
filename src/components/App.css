@@ -1,0 +1,16 @@
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.load-more-btn {
+  margin: 16px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  color: #fff;
+  background-color: #333;
+  border-radius: 4px;
+}

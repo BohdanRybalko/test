@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './UserCard.css';
 
 const UserCard = ({ user }) => {
   const [isFollowing, setIsFollowing] = useState(false);
@@ -6,9 +7,9 @@ const UserCard = ({ user }) => {
 
   const handleFollowClick = () => {
     if (isFollowing) {
-      setFollowersCount(prevCount => prevCount - 1);
+      setFollowersCount((prevCount) => prevCount - 1);
     } else {
-      setFollowersCount(prevCount => prevCount + 1);
+      setFollowersCount((prevCount) => prevCount + 1);
     }
     setIsFollowing(!isFollowing);
   };
@@ -18,9 +19,10 @@ const UserCard = ({ user }) => {
       <img src={user.avatar} alt="User Avatar" />
       <h3>{user.username}</h3>
       <p>Followers: {followersCount.toLocaleString()}</p>
+      <p>Tweets: {user.tweets}</p>
       <button
         onClick={handleFollowClick}
-        style={{ backgroundColor: isFollowing ? 'green' : 'blue' }}
+        className={isFollowing ? 'following-btn' : 'follow-btn'}
       >
         {isFollowing ? 'Following' : 'Follow'}
       </button>

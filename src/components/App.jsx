@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getUsers } from '../services/UserService';
 import UserCard from './UserCard';
+import './App.css';
 
 export const App = () => {
   const [users, setUsers] = useState([]);
@@ -9,22 +10,24 @@ export const App = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       const data = await getUsers(currentPage);
-      setUsers(prevUsers => [...prevUsers, ...data]);
+      setUsers((prevUsers) => [...prevUsers, ...data]);
     };
 
     fetchUsers();
   }, [currentPage]);
 
   const handleLoadMore = () => {
-    setCurrentPage(prevPage => prevPage + 1);
+    setCurrentPage((prevPage) => prevPage + 1);
   };
 
   return (
     <div className="app">
-      {users.map(user => (
+      {users.map((user) => (
         <UserCard key={user.id} user={user} />
       ))}
-      <button onClick={handleLoadMore}>Load More</button>
+      <button onClick={handleLoadMore} className="load-more-btn">
+        Load More
+      </button>
     </div>
   );
 };

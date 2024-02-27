@@ -1,0 +1,39 @@
+.user-card {
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin: 16px;
+  text-align: center;
+}
+
+.user-card img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.user-card h3 {
+  margin: 8px 0;
+}
+
+.user-card p {
+  margin: 8px 0;
+}
+
+.follow-btn,
+.following-btn {
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.follow-btn {
+  background-color: blue;
+}
+
+.following-btn {
+  background-color: green;
+}
